@@ -4,6 +4,7 @@
     @blur="onBlurHandler"
     @input="onInputHandler"
     @focus="onFocusHandler"
+    @keydown="onKeyDownHandler"
     ref="numeric"
     type="tel"
     v-model="amount"
@@ -320,6 +321,13 @@ export default {
         })
       }
     },
+      /**
+       * Handle keydown event.
+       * @param {Object} e
+       */
+      onKeyDownHandler (e) {
+          this.$emit('keydown', e);
+      },
 
     /**
      * Handle input event.
